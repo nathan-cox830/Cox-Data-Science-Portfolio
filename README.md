@@ -3,6 +3,6 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 As I complete projects, they will be updated here! Check back for projects in data analysis, visualization, and modeling!
 
 ## Links to Code and Projects:
-[Exploratory Data Analysis](./EDA) /n
-[Visualizations](./visualizations) /n
-[Models](./models)
+[Exploratory Data Analysis](./EDA) <br>
+[Visualizations](./visualizations) <br>
+[Models](./models) <br>
