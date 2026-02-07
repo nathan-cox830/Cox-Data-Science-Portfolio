@@ -7,3 +7,6 @@ and see how these factors change popularity, as well as learn about some new son
 
 In order to run this app, download my repository's files, install any necessary packages, and run the code 
 **streamlit run basic_streamlit_app/main.py** in your terminal.
+
+This app utilizes histograms, correlation matrices, scatterplots, and violin plots to visualize, explore,
+and learn from this data. I hope you enjoy it!
