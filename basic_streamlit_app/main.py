@@ -10,7 +10,7 @@ st.set_page_config(page_title='Exploring Music Popularity by Genre and Feature',
 
 #load and rename data
 
-data = pd.read_csv("data/spotify_dataset.csv")
+data = pd.read_csv("basic_streamlit_app/data/spotify_dataset.csv")
 
 features = ['popularity', 'loudness', 'acousticness', 'valence', 'tempo']
 
@@ -35,7 +35,7 @@ with st.sidebar:
 
 a1, a2 = st.columns((.07,1))
 
-a1.image('images/spotify.png', width = 120)
+a1.image('basic_streamlit_app/images/spotify.png', width = 120)
 a2.title('Exploring Music Popularity by Genre and Feature')
 st.write('Each year, oven 700 million people use Spotify to listen to music. This exploratory data analysis looks a sample of songs from Spotify, and allows you to explore how song popularity changes with different genres and features. Use the panel on the left to explore and learn more!')
 
