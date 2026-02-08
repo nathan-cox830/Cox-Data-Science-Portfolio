@@ -4,7 +4,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 1. [Exploring Music Popularity and Genre](./basic_streamlit_app) <br>
 <img width="50px" height="50px" src="basic_streamlit_app/images/spotify.png" alt = "This is my first data science project, and I analyze Spotify music data! More information can be found at the link above."\ style="float: left; margin-right: 15px;"/>
 
-<table>
+<table border = 0>
   <tr>
     <td>
       <img src="basic_streamlit_app/images/spotify.png" width="50">
