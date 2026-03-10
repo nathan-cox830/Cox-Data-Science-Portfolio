@@ -6,5 +6,6 @@ When first loaded, this data is in a messy format, so Pandas techniques are util
 
 Then, it can be visualized and analyzed. I hope you find this project insightful and enjoy it!
 
-Here's a sneak peek of one of my visualizations!
+Here's a sneak peek of one of my visualizations, which shows the gender distribution of medals by sport!
+
 <img src="Images/heatmap.png">
