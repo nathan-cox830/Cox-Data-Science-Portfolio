@@ -14,7 +14,20 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
   </tr>
 </table>
 
+2. [Gender Equality in Olympic Sports](./TidyData-Project) <br>
+<table>
+  <tr>
+    <td>
+      <img src="TidyData-Project/Images/olympics.png" width="50">
+    </td>
+    <td>
+      This is my second data science project, and I analyze Olympic medal data!  
+      More information can be found at the link above.
+    </td>
+  </tr>
+</table>
+
 ## Links to Code and Projects:
 [Spotify Exploratory Data Analysis](./basic_streamlit_app) <br>
-[Visualizations](./visualizations) <br>
+[Olympics Tidy Data Project](./TidyData-Project) <br>
 [Models](./models) <br>
