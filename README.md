@@ -21,7 +21,8 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
       <img src="TidyData-Project/Images/olympics.png" width="50">
     </td>
     <td>
-      This is my second data science project, and I analyze Olympic medal data!  
+      This is my second data science project, and I analyze Olympic medal data!
+      This project demonstrates newly-learned skills in data cleaning and processing in order to gain gender insights in the Olympics.
       More information can be found at the link above.
     </td>
   </tr>
