@@ -18,7 +18,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 <table>
   <tr>
     <td>
-      <img src="TidyData-Project/Images/olympics.png" width="50">
+      <img src="TidyData-Project/Images/olympics.png" width="100">
     </td>
     <td>
       This is my second data science project, and I analyze Olympic medal data!
