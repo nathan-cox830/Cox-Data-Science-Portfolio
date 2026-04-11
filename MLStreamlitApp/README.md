@@ -29,6 +29,6 @@ The app features interactive data uploading and selection, and four machine lear
   - User can choose to drop missing values, scale data, and specify number of neighbors and weighting schema, all defined within the app!
 
 ## Example App Output!
-
+<img src="images/example-output.png">
 ## References
 If you are interested in learning more, here are some useful links!
