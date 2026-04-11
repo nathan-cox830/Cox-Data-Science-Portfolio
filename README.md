@@ -8,7 +8,8 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
       <img src="basic_streamlit_app/images/spotify.png" width="50">
     </td>
     <td>
-      This is my first data science project, and I analyze Spotify music data!  
+      This is my first data science project, and I analyze Spotify music data! I use several types of visualizations to analyze the relationships
+      between song features and popularity.
       More information can be found at the link above.
     </td>
   </tr>
@@ -23,6 +24,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
     <td>
       This is my second data science project, and I analyze Olympic medal data!
       This project demonstrates newly-learned skills in data cleaning and processing in order to gain gender insights in the Olympics.
+      I apply tidy data principles, and once the data has been processed, we can easily learn about Olympic gender equality.
       More information can be found at the link above.
     </td>
   </tr>
