@@ -28,7 +28,22 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
   </tr>
 </table>
 
+3. [Machine Learning Wizard App](./MLStreamlitApp) <br>
+<table>
+  <tr>
+    <td>
+      <img src="TidyData-Project/Images/olympics.png" width="150">
+    </td>
+    <td>
+      This is my third data science project, and I build a machine learning app!
+      This project demonstrates newly-learned skills in supervised machine learning, Streamlit integration, and a variety of models, including linear and logistic regression, decision trees, and k-nearest-neighbors.
+      More information can be found at the link above.
+    </td>
+  </tr>
+</table>
+
 ## Links to Code and Projects:
 [Spotify Exploratory Data Analysis](./basic_streamlit_app) <br>
 [Olympics Tidy Data Project](./TidyData-Project) <br>
+[Machine Learning Wizard App](./MLStreamlitApp) <br>
 [Models](./models) <br>
