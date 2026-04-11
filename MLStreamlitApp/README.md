@@ -27,3 +27,8 @@ The app features interactive data uploading and selection, and four machine lear
 4. K-Nearest-Neighbors Classifier
   - This model is also great for classification!
   - User can choose to drop missing values, scale data, and specify number of neighbors and weighting schema, all defined within the app!
+
+## Example App Output!
+
+## References
+If you are interested in learning more, here are some useful links!
