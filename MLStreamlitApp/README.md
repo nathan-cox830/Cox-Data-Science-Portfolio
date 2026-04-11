@@ -15,16 +15,16 @@ To run this app, do the following:
 
 ## App Features
 The app features interactive data uploading and selection, and four machine learning models!
-1. Linear Regression
+1. **Linear Regression**
   - For predicting a continuous numeric variable this model can be super useful!
   - Users can choose to drop missing values or scale data
-2. Logistic Regression
+2. **Logistic Regression**
   - This model is awesome for predicting binary outcomes!
   - User can choose to drop missing values or scale data
-3. Decision Tree Classifier
+3. **Decision Tree Classifier**
   - For classification, this model is one of the best!
   - User can choose to drop missing values, scale data, and specify max depth, min leaf size, and criterion, all defined within the app!
-4. K-Nearest-Neighbors Classifier
+4. **K-Nearest-Neighbors Classifier**
   - This model is also great for classification!
   - User can choose to drop missing values, scale data, and specify number of neighbors and weighting schema, all defined within the app!
 
