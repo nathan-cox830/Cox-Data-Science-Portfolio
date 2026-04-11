@@ -9,8 +9,8 @@ To run this app, do the following:
 1. Install the required libraries and tools
 2. Download the required files, including the sample data and main.py
 3. Download any data you would like to use in a CSV format
-4. In your terminal, navigate to the folder where this information is located, by typing 'cd {location}'
-5. Then, type the code 'streamlit run main.py'
+4. In your terminal, navigate to the folder where this information is located, by typing **cd {location}**
+5. Then, type the code **streamlit run main.py**
 6. Have fun with the app!
 
 ## App Features
@@ -30,5 +30,9 @@ The app features interactive data uploading and selection, and four machine lear
 
 ## Example App Output!
 <img src="images/example-output.png">
+
 ## References
 If you are interested in learning more, here are some useful links!
+- [Machine Learning in Python](https://www.geeksforgeeks.org/machine-learning/machine-learning-with-python/)
+- [SciKit-Learn Machine Learning Guide](https://scikit-learn.org/stable/supervised_learning.html)
+- [Streamlit API](https://docs.streamlit.io/develop/api-reference)
