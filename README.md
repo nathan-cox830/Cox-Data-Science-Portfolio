@@ -32,7 +32,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 <table>
   <tr>
     <td>
-      <img src="TidyData-Project/Images/olympics.png" width="150">
+      <img src="MLStreamlitApp/images/ml_icon.png" width="150">
     </td>
     <td>
       This is my third data science project, and I build a machine learning app!
