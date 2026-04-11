@@ -42,9 +42,9 @@ with st.sidebar:
 
 #Load Data
 if backup_data == 'Diabetes Data':
-    backup_file = 'sample_data/diabetes.csv'
+    backup_file = 'MLStreamlitApp/sample_data/diabetes.csv'
 else:
-    backup_file = 'sample_data/grades.csv'
+    backup_file = 'MLStreamlitApp/sample_data/grades.csv'
 
 if file is None:
     data = pd.read_csv(backup_file)
