@@ -8,5 +8,16 @@ and see how these factors change popularity, as well as learn about some new son
 In order to run this app, download my repository's files, install any necessary packages, and run the code 
 **streamlit run basic_streamlit_app/main.py** in your terminal.
 
-This app utilizes histograms, correlation matrices, scatterplots, and violin plots to visualize, explore,
-and learn from this data. I hope you enjoy it!
+Utilizing features such as:
+- Loudness
+- Acousticness
+- Valence
+- Tempo
+
+This app explores their relationship with popularity through:
+- Histograms
+- Correlation Matrices
+- Scatterplots
+- Violin Plots
+
+I am excited for my first project and I hope you enjoy it!
