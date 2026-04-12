@@ -12,7 +12,7 @@ You can also run this app locally! To run this app, do the following:
 1. Install the required libraries and tools
 2. Download the required files, including the sample data and main.py
 3. Download any data you would like to use in a CSV format
-5. In your terminal, type the code **streamlit run main.py**
+5. In your terminal, type the code **streamlit run MLStreamlitApp/main.py**
 6. Have fun with the app!
 
 ## App Features
