@@ -5,7 +5,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 <table>
   <tr>
     <td>
-      <img src="basic_streamlit_app/images/spotify.png" width="50">
+      <img src="basic_streamlit_app/images/spotify.png" width="250">
     </td>
     <td>
       This is my first data science project, and I analyze Spotify music data! I use several types of visualizations to analyze the relationships
@@ -19,7 +19,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 <table>
   <tr>
     <td>
-      <img src="TidyData-Project/Images/olympics.png" width="150">
+      <img src="TidyData-Project/Images/olympics.png" width="250">
     </td>
     <td>
       This is my second data science project, and I analyze Olympic medal data!
