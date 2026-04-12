@@ -5,12 +5,14 @@ The goal of this project was to create a fully customizable app to explore machi
 In an easily understandable layout, the user can explore this app, analyzing a variety of datasets and results!
 
 ## Instructions
-To run this app, do the following:
+The easiest way to access this app is at the following link:
+[Machine Learning Wizard App](https://machine-learning-wizard.streamlit.app)
+
+You can also run this app locally! To run this app, do the following:
 1. Install the required libraries and tools
 2. Download the required files, including the sample data and main.py
 3. Download any data you would like to use in a CSV format
-4. In your terminal, navigate to the folder where this information is located, by typing **cd {location}**
-5. Then, type the code **streamlit run main.py**
+5. In your terminal, type the code **streamlit run main.py**
 6. Have fun with the app!
 
 ## App Features
