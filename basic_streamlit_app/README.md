@@ -23,3 +23,6 @@ This app explores their relationship with popularity through:
 - Violin Plots
 
 I am excited for my first project and I hope you enjoy it!
+
+Here is an example from the app for my favorite music genre, country!
+<img src="images/corr_spotify.png">
