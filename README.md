@@ -48,4 +48,3 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 [Spotify Exploratory Data Analysis](./basic_streamlit_app) <br>
 [Olympics Tidy Data Project](./TidyData-Project) <br>
 [Machine Learning Wizard App](./MLStreamlitApp) <br>
-[Models](./models) <br>
