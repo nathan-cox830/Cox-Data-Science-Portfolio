@@ -8,9 +8,11 @@ The Tidy Data format includes three main criteria:
   2. Every column is a variable
   3. Every cell is a corresponding piece of data
 
+This notebooks provides an opportunity to **learn** about tidy data, **explore** real data, and **gain** important insights.
+
 After tidy data principles are applied, this complicated dataset can be condensed into just **three** important columns!
 
-Then, it can be visualized and analyzed. I hope you find this project insightful and enjoy it!
+Then it can be visualized and analyzed. I hope you find this project insightful and enjoy it!
 
 Here's a sneak peek of one of my visualizations, which shows the gender distribution of medals by sport!
 
@@ -19,7 +21,7 @@ Here's a sneak peek of one of my visualizations, which shows the gender distribu
 Instructions:
 - Download this GitHub 'TidyData-Project' repository
 - Run 'main.ipynb'
-- Ensure you have installed the necessary dependencies (pandas, seaborn, matplotlib.pyplot)
+- Ensure you have installed the necessary dependencies (pandas, seaborn, plotly.express)
 
 References:
 - [Pandas Cheat Sheet](https://pandas.pydata.org/Pandas_Cheat_Sheet.pdf)
