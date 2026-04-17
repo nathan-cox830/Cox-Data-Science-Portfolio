@@ -10,7 +10,7 @@ st.set_page_config(page_title='Exploring Music Popularity by Genre and Feature',
 
 #load and rename data
 
-data = pd.read_csv("basic_streamlit_app/data/spotify_dataset.csv")
+data = pd.read_csv("data/spotify_dataset.csv")
 
 features = ['popularity', 'loudness', 'acousticness', 'valence', 'tempo']
 
@@ -35,7 +35,7 @@ with st.sidebar:
 
 a1, a2 = st.columns((.07,1))
 
-a1.image('basic_streamlit_app/images/spotify.png', width = 120)
+a1.image('images/spotify.png', width = 120)
 a2.title('Exploring Music Popularity by Genre and Feature')
 st.write('Each year, oven 700 million people use Spotify to listen to music. This exploratory data analysis looks a sample of songs from Spotify, and allows you to explore how song popularity changes with different genres and features. Use the panel on the left to explore and learn more!')
 
@@ -79,13 +79,18 @@ g1.plotly_chart(hist1)
 g2.subheader('Songs of Selected Genre by Popularity')
 g2.dataframe(filtered_data[['track_name', 'artists', 'popularity']].sort_values(by = 'popularity', ascending = False), 
              hide_index = True, 
-             column_config = {'track_name':'Track Name', 'artists':'Artists', 'popularity':'Popularity'})
+             column_config = {'track_name':'Track Name', 'artists':'Artists', 'popularity':'Popularity'},
+             width = 'stretch')
 
 #build correlation matrix chart
 
 st.write('The matrix below shows how the popularity of your genre correlates with different factors. Use it to help choose a factor to explore!')
 
-corr = filtered_data[features].corr()
+corr_data = filtered_data.copy()
+corr_data.columns = corr_data.columns.str.capitalize()
+corr_feature = list(map(str.capitalize, features))
+corr = corr_data[corr_feature].corr()
+
 corr_chart = px.imshow(corr, 
                        text_auto = '.2f', 
                        color_continuous_scale = 'greens', 
@@ -98,7 +103,7 @@ st.plotly_chart(corr_chart)
 st.write("Now that you've selected a feature, let's see how it is related to the popularity of songs in your genre!")
 h1, h2 = st.columns((1,1))
 
-        #create bins of popularity
+#create bins of popularity
 filtered_data['pop_group'] = np.where(filtered_data['popularity'] > 70, 'High', 
                                       np.where(filtered_data['popularity'] > 30, 'Medium', 'Low'))
 
