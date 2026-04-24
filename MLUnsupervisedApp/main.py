@@ -55,6 +55,7 @@ with tab1:
     file = st.file_uploader('Upload a file of your own!', type = 'csv')
     data_selection = st.selectbox('Or Choose Built-In Data!', ['Beer Quality', 'Books'])
 
+    #Backup data prep
     if data_selection == 'Beer Quality':
         backup_file = 'MLUnsupervisedApp/sample_data/beer.csv'
     else:
