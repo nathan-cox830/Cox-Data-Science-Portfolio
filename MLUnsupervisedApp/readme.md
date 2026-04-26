@@ -34,7 +34,7 @@ I have included two sample datasets! <br>
 [**Wine Quality**](https://www.kaggle.com/datasets/tawfikelmetwally/wine-dataset): The wine dataset is great for PCA, clustering, and testing with a label!
 
 ### Further Learning
-[What is Unsupervised Machine Learning](https://www.geeksforgeeks.org/machine-learning/unsupervised-learning/)
+[What is Unsupervised Machine Learning](https://www.geeksforgeeks.org/machine-learning/unsupervised-learning/) <br>
 [Sci-Kit Learn Clustering Documentation](https://scikit-learn.org/stable/modules/clustering.html)
 
 
