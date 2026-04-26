@@ -20,3 +20,11 @@ Some highlights of the app!
 
 ### Instructions
 The recommended way to access the app is via [Streamlit Cloud](https://clevercluster.streamlit.app)
+
+You can also run this app locally! To run this app, do the following:
+
+Install the required libraries and tools
+Download the required files, including the sample data and main.py
+Download any data you would like to use in a CSV format
+In your terminal, type the code streamlit run MLUnsupervisedApp/main.py
+Have fun with the app!
