@@ -9,3 +9,8 @@ Clever Cluster allows users to select between **3** unsupervised machine learnin
 2. K-Means Clustering: This model uses cluster means to group similar observations!
 3. Hierarchical Clustering: This model uses sequential clustering to group similar observations!
 
+Some highlights of the app!
+- Users can upload a dataset or select a sample
+- Users can edit their data and select important model inputs
+- With K-Means, users have the option to select a label column and compare it with unsupervised groupings
+
