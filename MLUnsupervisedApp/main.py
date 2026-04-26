@@ -55,6 +55,9 @@ with tab1:
     file = st.file_uploader('Upload a file of your own!', type = 'csv')
     data_selection = st.selectbox('Or Choose Built-In Data!', ['Wine', 'Penguins'])
 
+    st.markdown('**Wine Dataset**: Contains many numerical features as well as a category column; great for all 3 model types!')
+    st.markdown('**Penguins Dataset**: Contained Island and Species groupings, as well as some features; great for clustering!')
+
     #Backup data prep
     if data_selection == 'Wine':
         backup_file = 'MLUnsupervisedApp/sample_data/wine.csv'
