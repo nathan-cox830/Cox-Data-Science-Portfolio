@@ -30,10 +30,8 @@ You can also run this app locally! To run this app, do the following:
 
 ### Datasets
 I have included two sample datasets! <br>
-[**Palmer's Pengiuns**](https://www.kaggle.com/datasets/mustafabozka/palmers-penguins) <br>
-- The penguin dataset is great for clustering and testing with a label! <br>
-[**Wine Quality**](https://www.kaggle.com/datasets/tawfikelmetwally/wine-dataset) <br>
-- The wine dataset is great for PCA, clustering, and testing with a label!
+[**Palmer's Pengiuns**](https://www.kaggle.com/datasets/mustafabozka/palmers-penguins): The penguin dataset is great for clustering and testing with a label! <br>
+[**Wine Quality**](https://www.kaggle.com/datasets/tawfikelmetwally/wine-dataset): The wine dataset is great for PCA, clustering, and testing with a label!
 
 ### Further Learning
 [What is Unsupervised Machine Learning](https://www.geeksforgeeks.org/machine-learning/unsupervised-learning/)
