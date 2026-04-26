@@ -19,4 +19,4 @@ Some highlights of the app!
 <img src="images/app_ex.png">
 
 ### Instructions
-The recommended way to access the app is via [Streamlit Cloud](clevercluster.streamlit.app)
+The recommended way to access the app is via [Streamlit Cloud](https://clevercluster.streamlit.app)
