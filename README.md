@@ -48,7 +48,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
 <table>
   <tr>
     <td>
-      <img src="MLStreamlitApp/images/ml_icon.png" width="250">
+      <img src="MLUnsupervisedApp/images/cluster.png" width="250">
     </td>
     <td>
       This is my fourth data science project, and I build an unsupervised machine learning app!
