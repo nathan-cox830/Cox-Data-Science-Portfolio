@@ -10,7 +10,12 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
     <td>
       This is my first data science project, and I analyze Spotify music data! I use several types of visualizations to analyze the relationships
       between song features and popularity.
-      More information can be found at the link above.
+      More information can be found at the link above. 
+      <br><br>
+      <strong>Key features:</strong>
+      <ul>
+        <li>Real and interesting data from Spotify!</li>
+        <li>Interactive visualizations!</li>
     </td>
   </tr>
 </table>
