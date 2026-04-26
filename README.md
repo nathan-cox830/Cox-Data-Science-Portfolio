@@ -12,7 +12,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
       between song features and popularity.
       More information can be found at the link above. 
       <br><br>
-      <strong>Key features:</strong>
+      Key features:
       <ul>
         <li>Real and interesting data from Spotify!</li>
         <li>Interactive visualizations!</li>
@@ -31,6 +31,12 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
       This project demonstrates newly-learned skills in data cleaning and processing in order to gain gender insights in the Olympics.
       I apply tidy data principles, and once the data has been processed, we can easily learn about Olympic gender equality.
       More information can be found at the link above.
+      <br><br>
+      Key features:
+      <ul>
+        <li>Real-life data-cleaning problem from the Olympics</li>
+        <li>Applying tidy data principles</li>
+        <li>Learning valuable information about gender equality</li>
     </td>
   </tr>
 </table>
