@@ -16,4 +16,4 @@ Some highlights of the app!
 - With K-Means, users have the option to select a label column and compare it with unsupervised groupings
 
 ### Example Output
-<img src="images/app_ex.pdf">
+<img src="images/app_ex.png">
