@@ -44,7 +44,22 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
   </tr>
 </table>
 
+4. [Clever Cluster App](./MLUnsupervisedApp) <br>
+<table>
+  <tr>
+    <td>
+      <img src="MLStreamlitApp/images/ml_icon.png" width="250">
+    </td>
+    <td>
+      This is my fourth data science project, and I build an unsupervised machine learning app!
+      This project demonstrates newly-learned skills in unsupervised machine learning and how to apply it in a Streamlit app! I utilize Principal Components Analysis, K-Means Clustering, and Hierarchical Clustering in my most interactive app yet!
+      More information can be found at the link above.
+    </td>
+  </tr>
+</table>
+
 ## Links to Code and Projects:
 [Spotify Exploratory Data Analysis](./basic_streamlit_app) <br>
 [Olympics Tidy Data Project](./TidyData-Project) <br>
 [Machine Learning Wizard App](./MLStreamlitApp) <br>
+[Clever Cluster App](./MLUnsupervisedApp)
