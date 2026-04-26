@@ -29,10 +29,10 @@ You can also run this app locally! To run this app, do the following:
 - Have fun with the app!
 
 ### Datasets
-I have included two sample datasets! \n\n
-[**Palmer's Pengiuns**](https://www.kaggle.com/datasets/mustafabozka/palmers-penguins) \n\n
-- The penguin dataset is great for clustering and testing with a label! \n\n
-[**Wine Quality**](https://www.kaggle.com/datasets/tawfikelmetwally/wine-dataset) \n\n
+I have included two sample datasets! <br>
+[**Palmer's Pengiuns**](https://www.kaggle.com/datasets/mustafabozka/palmers-penguins) <br>
+- The penguin dataset is great for clustering and testing with a label! <br>
+[**Wine Quality**](https://www.kaggle.com/datasets/tawfikelmetwally/wine-dataset) <br>
 - The wine dataset is great for PCA, clustering, and testing with a label!
 
 ### Further Learning
