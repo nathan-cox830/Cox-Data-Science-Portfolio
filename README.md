@@ -51,6 +51,12 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
       This is my third data science project, and I build a machine learning app!
       This project demonstrates newly-learned skills in supervised machine learning, Streamlit integration, and a variety of models, including linear and logistic regression, decision trees, and k-nearest-neighbors.
       More information can be found at the link above.
+      <br><br>
+      Key features:
+      <ul>
+        <li>Multiple machine learning models</li>
+        <li>Ability to learn about and adjust hyperparameters</li>
+        <li>Visualize and learn from results</li>
     </td>
   </tr>
 </table>
@@ -65,6 +71,12 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
       This is my fourth data science project, and I build an unsupervised machine learning app!
       This project demonstrates newly-learned skills in unsupervised machine learning and how to apply it in a Streamlit app! I utilize Principal Components Analysis, K-Means Clustering, and Hierarchical Clustering in my most interactive app yet!
       More information can be found at the link above.
+      <br><br>
+      Key features:
+      <ul>
+        <li>Multiple unsupervised machine learning models</li>
+        <li>Interaction across data selection and model selection and tuning</li>
+        <li>Opportunity to learn how a variety of complex models work</li>
     </td>
   </tr>
 </table>
