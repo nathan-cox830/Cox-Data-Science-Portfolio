@@ -28,7 +28,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
     </td>
     <td>
       This is my second data science project, and I analyze Olympic medal data!
-      This project demonstrates newly-learned skills in **data cleaning and processing** in order to gain gender insights in the Olympics.
+      This project demonstrates newly-learned skills in <b>data cleaning and processing</b> in order to gain gender insights in the Olympics.
       I apply **tidy data** principles, and once the data has been processed, we can easily learn about Olympic gender equality.
       More information can be found at the link above.
       <br><br>
