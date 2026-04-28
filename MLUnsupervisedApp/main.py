@@ -14,6 +14,8 @@ from sklearn.metrics import accuracy_score
 from scipy.cluster.hierarchy import linkage, dendrogram
 from sklearn.cluster import AgglomerativeClustering
 import numpy as np
+from scipy.optimize import linear_sum_assignment
+from sklearn.metrics import confusion_matrix
 
 #Initialize Page
 st.set_page_config(page_title = 'Unsupervised Machine Learning App', layout = 'wide')
@@ -125,10 +127,17 @@ with tab2:
     b1, b2 = st.columns([1,1])
     with b1:
         #Select features for the model
+        numeric_data = st.session_state.data.select_dtypes(include = ['number'])
         st.markdown('### Select Data Variables and Options')
-        feature_cols = st.multiselect('Select at least TWO feature columns', st.session_state.data.columns, help = 'Feature columns are the variables that will be used! These MUST be numeric variables.')
+        feature_cols = st.multiselect('Select at least TWO feature columns', 
+                                      numeric_data.columns, 
+                                      help = 'Feature columns are the variables that will be used! These MUST be numeric variables.')
         if feature_cols:
-            st.session_state.X = st.session_state.data[feature_cols]
+            if len(feature_cols) < 2:
+                st.warning('Select at least TWO columns')
+                st.stop()
+            else:
+                st.session_state.X = st.session_state.data[feature_cols]
         else:
             st.warning('At least one column must be selected!')
             st.stop()
@@ -275,14 +284,22 @@ def k_cluster_model(data):
              'to see how accurate your clusters are!')
 
     #Give option for having a target variable to compare with
-    label = st.multiselect('Do you have a target variable in mind?', st.session_state.data.columns, max_selections = 1)
+    label = st.multiselect('Do you have a target variable in mind?', 
+                           st.session_state.data.columns, 
+                           max_selections = 1)
+    
     if label:
-        y_full = st.session_state.data[label]
+        target_col = label[0]
+        y_full = st.session_state.data[target_col]
         st.session_state.y = y_full.loc[st.session_state.X.index]
+        num_groups = int(st.session_state.y.astype(str).nunique())
+        st.info(f'Your target has {num_groups} groups! Maybe try that number of clusters!')
     else: st.session_state.y = None
 
     #Select number of clusters
-    nclusters = st.slider('How many clusters would you liked to make?', min_value = 2, max_value = 15)
+    nclusters = st.slider('How many clusters would you liked to make?', 
+                          min_value = 2, 
+                          max_value = 15)
 
     #Run model
     if st.button('Run model!'):
@@ -311,6 +328,20 @@ def k_cluster_vis():
         d1, d2, d3 = st.columns([1,1,1])
         
         preds = st.session_state.kmeans.predict(st.session_state.X)
+        target_raw = st.session_state.y.values.ravel()
+
+        unique_targets = np.unique(target_raw)
+        target_mapped = np.array([np.where(unique_targets == t)[0][0] for t in target_raw])
+
+        cm = confusion_matrix(target_mapped, preds)
+
+        row_ind, col_ind = linear_sum_assignment(-cm)
+
+        mapping = {col: row for row, col in zip(row_ind, col_ind)}
+
+        aligned_preds = np.array([mapping.get(p, -1) for p in preds])
+
+        final_labels = [unique_targets[i] if i != -1 else "Unassigned" for i in aligned_preds]
 
         #Display metrics
         with d1:
@@ -319,7 +350,7 @@ def k_cluster_vis():
                       border = True)
         with d2:
             st.metric(label = 'Accuracy', 
-                      value = round(accuracy_score(st.session_state.y, preds), 2),
+                      value = round(accuracy_score(target_mapped, aligned_preds), 2),
                       border = True)
         with d3:
             st.metric(label = 'Within-Cluster Sum of Squares', 
@@ -337,16 +368,16 @@ def k_cluster_vis():
         plot_df = pd.DataFrame(pca_data, 
                                columns = ['PC1', 'PC2'])
         
-        plot_df['Cluster'] = st.session_state.kmeans.labels_.astype(str)
+        plot_df['Cluster_Aligned'] = final_labels
         plot_df['Actual'] = st.session_state.y.reset_index(drop=True).astype(str)
 
         fig = px.scatter(plot_df, 
                          x = 'PC1', 
                          y = 'PC2',
-                         color = 'Cluster',
+                         color = 'Cluster_Aligned',
                          symbol = 'Actual',
                          title = 'PCA: K-Means Clusters vs Real Labels',
-                         hover_data = ['Cluster', 'Actual'])
+                         hover_data = ['Cluster_Aligned', 'Actual'])
 
         st.plotly_chart(fig)
 
