@@ -56,8 +56,10 @@ tab1, tab2, tab3, tab4 = st.tabs(['🔢 Data', '📋 Select Features', '🚀 Run
 with tab1:
     #File selection
     file = st.file_uploader('Upload a file of your own!', type = 'csv')
-    data_selection = st.selectbox('Or Choose Built-In Data!', ['Wine', 'Penguins'])
+    data_selection = st.selectbox('Or Choose Built-In Data! If you would like to test clusters against true values, these sample sets are highly recommended!', 
+                                  ['Wine', 'Penguins'])
 
+    #Intro datasets
     st.markdown('**Wine Dataset**: Contains many numerical features as well as a category column; great for all 3 model types!')
     st.markdown('**Penguins Dataset**: Contained Island and Species groupings, as well as some features; great for clustering!')
 
@@ -163,10 +165,12 @@ with tab2:
         elif missing == 'Median Impute':
             for column in st.session_state.X.columns:
                 st.session_state.X[column] = st.session_state.X[column].fillna(st.session_state.X[column].median())
-        
+    
+    #Preview selected data
     st.markdown('### Preview Selected Data')
     st.dataframe(st.session_state.X, hide_index = True)
 
+    #Model selection
     st.markdown('### Choose model to build')
     st.markdown('How to choose the best model:')
     st.markdown('''
@@ -174,22 +178,24 @@ with tab2:
                 - Dimensionality Reduction - Reducing the number of variables into latent key components \n\n
                 - Clustering - Collecting observations in similar groups \n\n
                 If you want dimensionality reduction, choose Principal Components Analysis! \n\n
-                If you want clustering, choose K-Means or Hierarchical! \n\n
-                If you are interested to check clusters against a true label, try K-Means! 
-                If you just want to explore clusters, try Hierarchical!
+                If you want clustering, choose K-Means or Hierarchical! They can be tested against real data too! \n\n
                 ''')
     st.session_state.model = st.selectbox('Select model', 
                                           ['Principal Components Analysis', 'K-Means Clustering', 'Hierarchical Clustering'])
 
 #Construct PCA Model
 def pca_model(data):
+    #Intro PCA
     st.markdown('### Welcome to Principal Components Analysis!')
     st.markdown('Principal components analysis condenses your feature variables into fewer components that still contain most of the information!'
                 ' All you have to do is choose the number of components you would like!')
     st.markdown('For now, select a number that is less than the number of features you have!' 
                 ' In the next tab, we will look at better ways to choose the number of components!')
+    
+    #Choose number of components
     components = st.slider('Choose number of components', min_value = 1, max_value = len(data.columns))
 
+    #Initialize model
     if st.button('Run model!'):
         st.session_state.pca = PCA(n_components = components)
         st.session_state.X_pca = st.session_state.pca.fit_transform(data)
@@ -276,6 +282,7 @@ def pca_vis():
 
 #Construct K-Means model
 def k_cluster_model(data):
+    #Intro k means
     st.markdown('### Welcome to K-Means Clustering!')
     st.write('K-Means Clustering splits your data into k clusters using iterative grouping and mean calculations, ultimately working to ' \
              'find groups with converging centroids.')
@@ -316,6 +323,7 @@ def k_cluster_vis():
 
     #If a target variable is selected
     elif st.session_state.y is not None:
+        #Intro evaluations
         st.markdown('### K-Means Model Evaluation')
         st.markdown('''
                     There are a few ways we can evaluate our K-Means model: \n\n
@@ -327,6 +335,7 @@ def k_cluster_vis():
         
         d1, d2, d3 = st.columns([1,1,1])
         
+        #Map labels to clusters
         preds = st.session_state.kmeans.predict(st.session_state.X)
         target_raw = st.session_state.y.values.ravel()
 
@@ -357,6 +366,7 @@ def k_cluster_vis():
                       value = round(st.session_state.kmeans.inertia_, 2),
                       border = True)
         
+        #PCA intro
         st.markdown('### Using PCA to visualize clusters')
         st.write('Using PCA, we can condense feature variables into two components, which, while not perfect, allows us to visualize' \
                  ' the K-Means clusters, as well as how they compare to actual label values.')
@@ -467,6 +477,7 @@ def k_cluster_vis():
 
 #Construct Hierarchical Clustering model
 def hierarch_model(data):
+    #Intro hierarchical clustering
     st.markdown('### Welcome to Hierarchical Clustering!')
     st.write('Hierarchical Clustering begins by clustering individual observations, selecting clusters that minimize variance and distance,' \
     'and then combines multiple clusters in a new cluster. This process continues, and what we end up with is called a dendrogram, which ' \
@@ -496,6 +507,19 @@ def hierarch_model(data):
 
     st.pyplot(plt)
 
+    #Give option for validation label
+    label = st.multiselect('Do you have a target variable in mind?', 
+                           st.session_state.data.columns, 
+                           max_selections = 1)
+    
+    if label:
+        target_col = label[0]
+        y_full = st.session_state.data[target_col]
+        st.session_state.y = y_full.loc[st.session_state.X.index]
+        num_groups = int(st.session_state.y.astype(str).nunique())
+        st.info(f'Your target has {num_groups} groups! Maybe try that number of clusters!')
+    else: st.session_state.y = None
+
     #Select number of clusters
     nclusters = st.slider('Using the dendrogram, select a number of clusters', min_value = 2, max_value = 15)
 
@@ -512,13 +536,105 @@ def hierarch_vis():
     if 'agg' not in st.session_state or st.session_state.agg is None:
         st.warning('Model not fit yet!')
 
-    else:
+    #If label selected
+    elif st.session_state.y is not None:
+        #Intro model evaluation
+        st.markdown('### Hierarchical Model Evaluation')
+        st.markdown('In order to evaluate our hierarchical model, we can use the **silhouette score**, ' \
+                    'which indicates how similar an item is to its own cluster compared to other clusters - higher ' \
+                    'numbers are better. We can also use **accuracy**, which measures how closely our predictions fit the real values!')
+        
+        d1, d2 = st.columns([1,1])
+        
+        #Map clusters to labels
+        preds = st.session_state.agg.fit_predict(st.session_state.X)
+        target_raw = st.session_state.y.values.ravel()
+
+        unique_targets = np.unique(target_raw)
+        target_mapped = np.array([np.where(unique_targets == t)[0][0] for t in target_raw])
+
+        cm = confusion_matrix(target_mapped, preds)
+
+        row_ind, col_ind = linear_sum_assignment(-cm)
+
+        mapping = {col: row for row, col in zip(row_ind, col_ind)}
+
+        aligned_preds = np.array([mapping.get(p, -1) for p in preds])
+
+        final_labels = [unique_targets[i] if i != -1 else "Unassigned" for i in aligned_preds]
+
+        #Display metrics
+        with d1:
+            st.metric(label = 'Silhouette Score', 
+                      value = round(silhouette_score(st.session_state.X, st.session_state.agg.labels_), 2),
+                      border = True)
+        with d2:
+            st.metric(label = 'Accuracy', 
+                      value = round(accuracy_score(target_mapped, aligned_preds), 2),
+                      border = True)
+
+        e1, e2 = st.columns([1,1])
+        with e1:
+            st.markdown('### Using PCA to visualize clusters')
+            st.write('Using PCA, we can condense feature variables into two components, which, while not perfect, allows us to visualize' \
+                     ' the hierarchical clusters, as well as how they compare to actual label values.')
+            
+            #Use PCA for visualizing clusters
+            pca_2d = PCA(n_components=2)
+            pca_data = pca_2d.fit_transform(st.session_state.X)
+
+            plot_df = pd.DataFrame(pca_data, 
+                                   columns = ['PC1', 'PC2'])
+        
+            plot_df['Cluster_Aligned'] = final_labels
+            plot_df['Cluster_Aligned'] = plot_df['Cluster_Aligned'].astype(str)
+            plot_df['Actual'] = st.session_state.y.reset_index(drop=True).astype(str)
+
+            fig = px.scatter(plot_df, 
+                             x = 'PC1', 
+                             y = 'PC2',
+                             color = 'Cluster_Aligned',
+                             symbol = 'Actual',
+                             title = 'PCA: Hierarchical Clusters vs Real Labels',
+                             hover_data = ['Cluster_Aligned', 'Actual'])
+
+            st.plotly_chart(fig)
+        with e2:
+            #Silhouette Score n optimization
+            st.markdown('### Choosing Optimal Number of Clusters')
+            st.markdown('''
+                        We can easily find the optimal number of clusters! \n\n
+                        **Silhouette Plot** - This plots silhouette score vs. number of clusters, and the optimal n is the highest point \n\n
+                        ''')
+            ns = range(2,16)
+            silhouette_scores = []
+
+            for n in ns:
+                labels  = AgglomerativeClustering(n_clusters = n, linkage = 'ward').fit_predict(st.session_state.X)
+                score = silhouette_score(st.session_state.X, labels)
+                silhouette_scores.append(score)
+
+            fig = px.line(x = ns, 
+                          y = silhouette_scores, 
+                          markers = True,
+                          color_discrete_sequence = ['red'])
+
+            fig.update_layout(title = 'Silhouette Score for Optimal n',
+                              xaxis_title = 'Number of clusters (n)',
+                              yaxis_title = 'Silhouette Score')
+
+            st.plotly_chart(fig)
+
+    #If no label selected
+    elif st.session_state.y is None:
+        
         d1, d2 = st.columns([2,1])
 
         with d1:
+            #Intro model evaluation
             st.markdown('### Hierarchical Model Evaluation')
             st.markdown('In order to evaluate our hierarchical model, we will use the **silhouette score**, ' \
-                        'which indicates how similar an item is to its own cluster compared to other clusters - higher' \
+                        'which indicates how similar an item is to its own cluster compared to other clusters - higher ' \
                         'numbers are better')
        
         #Create cluster labels
