@@ -8,7 +8,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
       <img src="basic_streamlit_app/images/spotify.png" width="150">
     </td>
     <td>
-      This is my first data science project, and I analyze Spotify music data! I use several types of visualizations to analyze the relationships
+      This is my first data science project, and I analyze Spotify music data! I use several types of <b>visualizations</b> to analyze the relationships
       between song features and popularity.
       More information can be found at the link above. 
       <br><br>
@@ -28,8 +28,8 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
     </td>
     <td>
       This is my second data science project, and I analyze Olympic medal data!
-      This project demonstrates newly-learned skills in data cleaning and processing in order to gain gender insights in the Olympics.
-      I apply tidy data principles, and once the data has been processed, we can easily learn about Olympic gender equality.
+      This project demonstrates newly-learned skills in <b>data cleaning and processing</b> in order to gain gender insights in the Olympics.
+      I apply <b>tidy data</b> principles, and once the data has been processed, we can easily learn about Olympic gender equality.
       More information can be found at the link above.
       <br><br>
       Key features:
@@ -49,7 +49,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
     </td>
     <td>
       This is my third data science project, and I build a machine learning app!
-      This project demonstrates newly-learned skills in supervised machine learning, Streamlit integration, and a variety of models, including linear and logistic regression, decision trees, and k-nearest-neighbors.
+      This project demonstrates newly-learned skills in <b>supervised machine learning</b>, <b>Streamlit integration</b>, and a variety of models, including <b>linear          and logistic regression</b>, <b>decision trees</b>, and <b>k-nearest-neighbors</b>.
       More information can be found at the link above.
       <br><br>
       Key features:
@@ -69,7 +69,7 @@ This portfolio will contain all code and projects for an Introduction to Data Sc
     </td>
     <td>
       This is my fourth data science project, and I build an unsupervised machine learning app!
-      This project demonstrates newly-learned skills in unsupervised machine learning and how to apply it in a Streamlit app! I utilize Principal Components Analysis, K-Means Clustering, and Hierarchical Clustering in my most interactive app yet!
+      This project demonstrates newly-learned skills in <b>unsupervised machine learning</b> and how to apply it in a Streamlit app! I utilize <b>Principal Components          Analysis</b>, <b>K-Means Clustering</b>, and <b>Hierarchical Clustering</b> in my most interactive app yet!
       More information can be found at the link above.
       <br><br>
       Key features:
