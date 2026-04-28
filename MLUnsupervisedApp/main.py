@@ -13,6 +13,7 @@ from sklearn.metrics import silhouette_score
 from sklearn.metrics import accuracy_score
 from scipy.cluster.hierarchy import linkage, dendrogram
 from sklearn.cluster import AgglomerativeClustering
+import numpy as np
 
 #Initialize Page
 st.set_page_config(page_title = 'Unsupervised Machine Learning App', layout = 'wide')
@@ -276,7 +277,8 @@ def k_cluster_model(data):
     #Give option for having a target variable to compare with
     label = st.multiselect('Do you have a target variable in mind?', st.session_state.data.columns, max_selections = 1)
     if label:
-        st.session_state.y = st.session_state.data[label]
+        y_full = st.session_state.data[label]
+        st.session_state.y = y_full.loc[st.session_state.X.index]
     else: st.session_state.y = None
 
     #Select number of clusters
@@ -307,6 +309,8 @@ def k_cluster_vis():
                     ''')
         
         d1, d2, d3 = st.columns([1,1,1])
+        
+        preds = st.session_state.kmeans.predict(st.session_state.X)
 
         #Display metrics
         with d1:
@@ -315,7 +319,7 @@ def k_cluster_vis():
                       border = True)
         with d2:
             st.metric(label = 'Accuracy', 
-                      value = round(accuracy_score(st.session_state.y, st.session_state.kmeans.predict(st.session_state.X)), 2),
+                      value = round(accuracy_score(st.session_state.y, preds), 2),
                       border = True)
         with d3:
             st.metric(label = 'Within-Cluster Sum of Squares', 
@@ -332,6 +336,7 @@ def k_cluster_vis():
 
         plot_df = pd.DataFrame(pca_data, 
                                columns = ['PC1', 'PC2'])
+        
         plot_df['Cluster'] = st.session_state.kmeans.labels_.astype(str)
         plot_df['Actual'] = st.session_state.y.reset_index(drop=True).astype(str)
 
