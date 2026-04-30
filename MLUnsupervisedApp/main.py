@@ -379,6 +379,7 @@ def k_cluster_vis():
                                columns = ['PC1', 'PC2'])
         
         plot_df['Cluster_Aligned'] = final_labels
+        plot_df['Cluster_Aligned'] = plot_df['Cluster_Aligned'].astype(str)
         plot_df['Actual'] = st.session_state.y.reset_index(drop=True).astype(str)
 
         fig = px.scatter(plot_df, 
