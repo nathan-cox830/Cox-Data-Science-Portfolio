@@ -60,8 +60,10 @@ with tab1:
                                   ['Wine', 'Penguins'])
 
     #Intro datasets
-    st.markdown('**Wine Dataset**: Contains many numerical features as well as a category column; great for all 3 model types!')
-    st.markdown('**Penguins Dataset**: Contained Island and Species groupings, as well as some features; great for clustering!')
+    st.markdown('**Wine Dataset**: Contains many numerical features as well as a category column; great for all 3 model types! '
+                '"Class" is a great category to test clusters with!')
+    st.markdown('**Penguins Dataset**: Contained Island and Species groupings, as well as some features; great for clustering! '
+                '"Species" and "Island" are great categories to test clusters with!')
 
     #Backup data prep
     if data_selection == 'Wine':
